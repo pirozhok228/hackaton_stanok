@@ -1,0 +1,38 @@
+.header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.search, .search img {
+    width: 40px;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+}
+
+.btn {
+    width: 140px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.btn_activated {
+    background-color: rgb(68, 68, 68);
+}
+
+.input {
+    background-color: white;
+    color: black;
+    width: 700px;
+    height: 40px;
+    padding: 15px;
+    border-radius: 10px;
+    justify-self: center;
+}
+
+.user {
+    justify-self: end;
+}
