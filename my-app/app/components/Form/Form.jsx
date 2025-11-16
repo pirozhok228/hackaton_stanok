@@ -2,13 +2,23 @@
 
 import Styles from './Form.module.css'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 
 export const Form = (props) => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [username, setUsername] = useState("");
     const [birthday, setBirthday] = useState("");
+    const [isAuth, setAuth] = useState(false);
+    const router = useRouter()
+
+    useEffect(() => {
+        console.log(isAuth)
+        if (isAuth) {
+            router.push('/')
+        }
+    }, [isAuth])
 
     const authorize = async() => {
         const user = {
@@ -24,14 +34,14 @@ export const Form = (props) => {
             body: userJSON
         })
         const status = await res.json();
+        localStorage.setItem('jwt', status.jwt_token)
+        setAuth(true)
     }
 
     const register = async() => {
         const user = {
             login: login,
-            password: password,
-            username: username,
-            birthday: birthday
+            password: password
         }
         const userJSON = JSON.stringify(user);
         const res = await fetch('http://localhost:8080/register', {
@@ -42,7 +52,8 @@ export const Form = (props) => {
             body: userJSON
         })
         const status = await res.json();
-        console.log(status);
+        localStorage.setItem('jwt', status.jwt_token)
+        setAuth(true)
     }
 
     if (props.action === 'auth') {

@@ -1,15 +1,28 @@
 import Styles from './CategoriesList.module.css'
+import Link from 'next/link'
 
-export const CategoriesList = () => {
+export const CategoriesList = (props) => {
     const colors = ['red', 'green', 'blue', 'yellow', 'grey', 'lasur']
+
+    const id_categories =  {
+        "финансы": 1,
+        "игры": 2,
+        "государственное": 3,
+        "транспорт": 4,
+        "инструменты": 5
+    }
+
     return (
-        <div className={Styles.list}>
-            <button className={`${Styles.category} ${Styles[colors[0]]}`}>💰Финансы</button>
-            <button className={`${Styles.category} ${Styles[colors[1]]}`}>🛠️Инструменты</button>
-            <button className={`${Styles.category} ${Styles[colors[2]]}`}>🎮Игры</button>
-            <button className={`${Styles.category} ${Styles[colors[3]]}`}>🚌Транспорт</button>
-            <button className={`${Styles.category} ${Styles[colors[4]]}`}>🏛️Государственные</button>
-            <button className={`${Styles.category} ${Styles[colors[5]]}`}>👨🏻‍💻Разработка</button>
-        </div>
+        <ol className={Styles.list}>
+            {
+                props.cats.map((item, index) => {
+                    return (
+                    <li key={index}>
+                        <Link href={`/categories/${id_categories[item]}`}><button className={`${Styles.category} ${Styles[colors[index]]}`}>{item}</button></Link>
+                    </li>
+                    )
+                })
+            }
+        </ol>
     )
 }

@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.information h1 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.information p {
+    color: rgb(172, 172, 172);
+}
+
+.icon {
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.download {
+    display: flex;
+    align-items: center;
+}
+
+.btn_download {
+    background-color: rgb(69, 69, 216);
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.btn_download:hover {
+    background-color: rgb(29, 29, 100);
+}
+
+.pictures {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.pictures img {
+    width: 300px;
+}
