@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    column-gap: 50px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    width: 950px;
+    justify-self: center;
+    margin-top: 120px;
+}

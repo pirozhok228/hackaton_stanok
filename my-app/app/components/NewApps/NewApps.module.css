@@ -1,7 +1,56 @@
 .container {
+    flex-direction: column;
+}
+
+.app_container {
+    height: 400px;
     display: flex;
     flex-direction: row;
     justify-self: center;
-    margin-top: 100px;
-    column-gap: 20px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.app_container button {
+    width: 150px;
+    height: 150px;
+}
+
+.app {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    align-items: center;
+    background-color: #222222;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.app img {
+    width: 150px;
+    border-radius: 20px;
+}
+
+.app p {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background-color: rgb(122, 122, 122);
+    border-radius: 50%;
+}
+
+.circle_white {
+    background-color: white;
 }

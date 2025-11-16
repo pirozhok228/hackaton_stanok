@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import Styles from './Header.module.css'
+import { ST } from 'next/dist/shared/lib/utils'
 
 export const Header = () => {
     useEffect(() => {
@@ -30,10 +31,10 @@ export const Header = () => {
                     <button className={Styles.btn} onClick={() => {router.push('/'); router.refresh()}}>Обзор</button>
                 }
                 {
-                    window.location.pathname === '/downloaded' ? 
-                    <button className={`${Styles.btn_activated} ${Styles.btn}`} onClick={() => router.push('/downloaded')}>Установлено</button>
+                    window.location.pathname === '/downloads' ? 
+                    <button className={`${Styles.btn_activated} ${Styles.btn}`} onClick={() => router.push('/downloads')}>Установлено</button>
                     : 
-                    <button className={Styles.btn} onClick={() => {router.push('/downloaded'); router.refresh()}}>Установлено</button>
+                    <button className={Styles.btn} onClick={() => {router.push('/downloads'); router.refresh()}}>Установлено</button>
                 }
                 {
                     window.location.pathname === '/updates' ? 
@@ -42,7 +43,7 @@ export const Header = () => {
                     <button className={Styles.btn} onClick={() => {router.push('/updates'); router.refresh()}}>Обновления</button>
                 }
             </nav>
-            <button className={Styles.user}>Войти</button>
+            <button className={Styles.user} onClick={() => router.push('/auth')}>Войти</button>
         </header>
     )
 }
